@@ -7,8 +7,7 @@ WORKDIR /app
 
 # install dependencies
 COPY package.json yarn.lock ./
-RUN --mount=type=cache,target=/cache/yarn \
-    yarn install
+RUN yarn install
 
 # copy app source
 COPY . ./
