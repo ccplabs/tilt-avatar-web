@@ -12,7 +12,7 @@ export default defineConfig({
     host: process.env.VITE_HOST || '127.0.0.1',
     port: process.env.VITE_PORT || 8080,
     hmr: {
-      clientPort: process.env.VITE_CLIENT_PORT || 1337
+      clientPort: process.env.VITE_CLIENT_PORT || null
     },
     proxy: {
       '^/api': {
