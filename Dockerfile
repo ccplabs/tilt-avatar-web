@@ -1,4 +1,4 @@
-FROM docker.io/node:lts-bullseye-slim as builder
+FROM docker.io/node:16-bullseye-slim as builder
 
 ENV YARN_CACHE_FOLDER=/cache/yarn
 ENV API_URL=http://127.0.0.1:1337
