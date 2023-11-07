@@ -4,19 +4,19 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 export default defineConfig({
 
   // ↓↓↓ change to logLevel: 'info' ↓↓↓
-  logLevel: 'warn',
+  logLevel: 'info',
   // ↑↑↑ change to logLevel: 'info' ↑↑↑
 
   plugins: [reactRefresh()],
   server: {
-    host: process.env.VITE_HOST || null,
-    port: process.env.VITE_PORT || null,
+    host: process.env.VITE_HOST || '127.0.0.1',
+    port: process.env.VITE_PORT || 8080,
     hmr: {
-      clientPort: process.env.VITE_CLIENT_PORT || null
+      clientPort: process.env.VITE_CLIENT_PORT || 1337
     },
     proxy: {
       '^/api': {
-        target: process.env.API_URL,
+        target: process.env.API_URL || 'http://127.0.0.1:1337',
         changeOrigin: true
       }
     }

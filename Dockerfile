@@ -1,7 +1,7 @@
-FROM node:18-bullseye-slim
+FROM docker.io/node:lts-bullseye-slim
 
 ENV YARN_CACHE_FOLDER=/cache/yarn
-ENV API_URL=localhost:1337
+ENV API_URL=http://127.0.0.1:1337
 
 WORKDIR /app
 
@@ -13,5 +13,5 @@ RUN yarn install
 COPY . ./
 
 ENV VITE_HOST=0.0.0.0
-ENV VITE_PORT=80
+ENV VITE_PORT=8080
 CMD ["yarn", "dev"]
