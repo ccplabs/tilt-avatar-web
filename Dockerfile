@@ -10,13 +10,16 @@ COPY package.json yarn.lock ./
 
 RUN yarn install
 
-RUN yarn global add vite
+RUN yarn global add vite http-server
 
 # copy app source
 COPY . ./
 
 RUN yarn build
 
-ENV VITE_HOST=0.0.0.0
-ENV VITE_PORT=8080
-CMD ["yarn", "dev"]
+# ENV VITE_HOST=0.0.0.0
+# ENV VITE_PORT=8080
+# CMD ["yarn", "dev"]
+
+EXPOSE 8080
+CMD [ "http-server", "dist" ]
