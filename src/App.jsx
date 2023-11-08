@@ -29,7 +29,7 @@ function App() {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`${process.env.API_URL}/api/avatar/spec`)
+        fetch(`http://r-5027454-develop.ccp-0f81c4e-4995a55-develop.svc.cluster.local/api/avatar/spec`)
             .then(res => res.json())
             .then(result => {
                 setSpec(result);
@@ -51,7 +51,7 @@ function App() {
             setAvatarURL(null);
             return;
         }
-        setAvatarURL(`${process.env.API_URL}/api/avatar?` + new URLSearchParams(partChoices));
+        setAvatarURL(`http://r-5027454-develop.ccp-0f81c4e-4995a55-develop.svc.cluster.local/api/avatar?` + new URLSearchParams(partChoices));
     }, [partChoices, loading]);
 
     if (error) {
