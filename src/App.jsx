@@ -29,7 +29,7 @@ function App() {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`http://r-5027454-develop.ccp-0f81c4e-4995a55-develop.svc.cluster.local/api/avatar/spec`)
+        fetch(`https://r-6541781-develop.beta.cuemby.io/api/avatar/spec`)
             .then(res => res.json())
             .then(result => {
                 setSpec(result);
@@ -51,7 +51,7 @@ function App() {
             setAvatarURL(null);
             return;
         }
-        setAvatarURL(`http://r-5027454-develop.ccp-0f81c4e-4995a55-develop.svc.cluster.local/api/avatar?` + new URLSearchParams(partChoices));
+        setAvatarURL(`https://r-6541781-develop.beta.cuemby.io/api/avatar?` + new URLSearchParams(partChoices));
     }, [partChoices, loading]);
 
     if (error) {
